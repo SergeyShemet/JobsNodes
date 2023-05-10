@@ -7,7 +7,7 @@ import Form from "react-bootstrap/Form";
 import DatePicker from "react-datepicker";
 import UserService from "../services/user.service";
 import 'react-datepicker/dist/react-datepicker.css';
-
+import ru from 'date-fns/locale/ru'
 export default function CardEditor(props) {
 
     const [isShow, invokeModal] = useState(true);
@@ -156,7 +156,7 @@ export default function CardEditor(props) {
 
             <Form.Group className="mb-3">
                 <Form.Label>Дата и время исполнения</Form.Label>
-                <DatePicker selected={expiresAt} onChange={date => setExpiresAt(date)} showTimeSelect dateFormat="Pp" timeFormat="HH:mm" disabled={!editable}/>
+                <DatePicker selected={expiresAt} onChange={date => setExpiresAt(date)} showTimeSelect dateFormat="Pp" timeFormat="HH:mm" locale={ru} disabled={!editable}/>
             </Form.Group>
 
             <Form.Group className="mb-3">
